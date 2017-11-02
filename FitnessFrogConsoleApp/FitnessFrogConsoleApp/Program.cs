@@ -24,6 +24,21 @@ namespace FitnessFrogConsoleApp
                     //add minutes excercised to total
                     total += int.Parse(entry);
 
+                    if (total <= 0)
+                    {
+                        Console.WriteLine("Invalid number:" + entry);
+                        continue;
+                    } else if (total <= 10)
+                    {
+                        Console.WriteLine("Better than nothing.");
+                    } else if (total <= 30)
+                    {
+                        Console.WriteLine("Way to go.");
+                    } else
+                    {
+                        Console.WriteLine("Extreme!");
+                    }
+
                     //display total minutes excercised to the screen
                     Console.WriteLine("You've entered a total of " + total + " minutes.");
                 }   
