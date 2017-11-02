@@ -1,2 +1,2 @@
 # example-fitness-frog
-Example program written in C#
+Example console app written in C#
