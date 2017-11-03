@@ -6,42 +6,50 @@ namespace FitnessFrogConsoleApp
     {
         static void Main()
         {
-            int total = 0;
-            bool keep_going = true;
+            double total = 0;
 
-            while (keep_going)
+            while (true)
             {
                 //prompt the user for minutes excercised
                 Console.Write("Enter how many minutes you excercise or type 'quit': ");
                 string entry = Console.ReadLine();
 
                 //repeat until the user quits
-                if (entry == "quit")
+                if (entry.ToLower() == "quit")
                 {
-                    keep_going = false;
-                } else
+                    break;
+                } 
+   
+                //add minutes excercised to total
+                try
                 {
-                    //add minutes excercised to total
-                    total += int.Parse(entry);
+                    total += double.Parse(entry);
 
                     if (total <= 0)
                     {
                         Console.WriteLine("Invalid number:" + entry);
                         continue;
-                    } else if (total <= 10)
+                    }
+                    else if (total <= 10)
                     {
                         Console.WriteLine("Better than nothing.");
-                    } else if (total <= 30)
+                    }
+                    else if (total <= 30)
                     {
                         Console.WriteLine("Way to go.");
-                    } else
+                    }
+                    else
                     {
                         Console.WriteLine("Extreme!");
                     }
 
                     //display total minutes excercised to the screen
                     Console.WriteLine("You've entered a total of " + total + " minutes.");
-                }   
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Must be an integer or 'quit'!");
+                }
             }
 
             Console.WriteLine("Goodbye!");
