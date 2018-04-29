@@ -4,6 +4,8 @@
 C# Basics
 
 https://teamtreehouse.com/library/c-basics
+
+![screenshot](https://github.com/sarn1/example-aspnet-fitness-frog/blob/master/screenshot.png )
  
 - C# -> Windows Classic Desktop -> Console
 - REPL = scratch paper.  Open by going to View -> Other Windows -> C# Interactive Window
